@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+djangorestframework = "*"
+drf-nested-routers = "*"
+celery = "*"
+django-celery-results = "*"
+django-background-tasks = "*"
+django = "==3.2.10"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
