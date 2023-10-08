@@ -1,21 +1,24 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
+from djoser.serializers import UserSerializer, UserCreateSerializer as BaseCreateUserSerializer
 from .models import Task
 
 
-class UserSerializer(serializers.Serializer):
-    """"
-    Serializes a user object
-    """
-    username = serializers.CharField(max_length=255)
-    password = serializers.CharField(max_length=128, write_only=True)
 
-    def create(self, validated_data):
-        """
-        Create and return a new user instance, given the validated data
-        """
-        user = User.objects.create_user(**validated_data)
-        return user
+class CustomUserSerializer(UserSerializer):
+    """
+    Custom UserSerializer to add extra fields
+    """
+    class Meta(UserSerializer.Meta):
+        fields = ('id', 'username', 'email', 'first_name', 'last_name')
+
+
+class UserCreateSerializer(BaseCreateUserSerializer):
+    """
+    Custom UserCreateSerializer to add extra fields
+    """
+    class Meta(BaseCreateUserSerializer.Meta):
+        fields = ('id', 'email', 'username', 'password', 'first_name', 'last_name')
+
 
 class TaskSerializer(serializers.ModelSerializer):
     """ Serializes a task object"""

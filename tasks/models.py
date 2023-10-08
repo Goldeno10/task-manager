@@ -18,7 +18,6 @@ class Task(models.Model):
         ('in_progress', 'In Progress'),
         ('completed', 'Completed'),
     ]
-    
     title = models.CharField(max_length=255)
     description = models.TextField()
     due_date = models.DateTimeField()
