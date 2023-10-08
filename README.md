@@ -20,43 +20,48 @@ Task Manager API is a Django-based web application that allows users to manage t
 - Celery (for background job processing)
 - Redis (for Celery message broker)
 
-### Installation
+## Installation
 
-1. Clone the repository to your local machine:
+### 1. Clone the repository to your local machine:
 
-   ```bash
+   ```
    git clone https://github.com/your-username/task-manager-api.git
+   ```
+### 2 - Navigate to the project directory:
 
-### 1 - Navigate to the project directory:
-
-cd task-manager-api
-
-#### 2- Install the required Python packages:
-
+   ```
+     cd task-manager-api
+   ```
+### 2- Install the required Python packages:
+```
 pip install -r requirements.txt
+```
 Configure the Django project settings in task_manager/settings.py. Ensure you have the database settings, secret key, and email settings properly configured.
 
 #### 3 - Migrate the database:
-
+```
 python manage.py migrate
-
+```
 ### 4 - Create a superuser for admin access:
-
+```
 python manage.py createsuperuser
+```
+Start the Django background job processing:
+   ```
+   python manage.py process_tasks
+   ```
 
-Start the Celery worker for background job processing:
-
-celery -A task_manager worker --loglevel=info
 Start the Django development server:
-
-python manage.py runserver
+   ```
+   python manage.py runserver
+   ```
 
 ## Usage
 Access the Django admin panel to add more users and manage tasks:
-http://localhost:8000/admin/
-
-
-## Use the API endpoints to interact with tasks:
+   ```
+   http://localhost:8000/admin/
+   ```
+### Use the API endpoints to interact with tasks:
 
 Create a task: POST /api/tasks/
 List all tasks: GET /api/tasks/
@@ -82,5 +87,5 @@ This project was created as a learning exercise for Django and Django REST frame
 Special thanks to the Django and its excellent documentation and resources.
 
 ### Support
-If you encounter any issues or have questions, please open an issue on the GitHub repository.
-https://github.com/Goldeno10/task-manager-api/issues
+If you encounter any issues or have questions, please open an issue on the [GitHub](https://github.com/Goldeno10/task-manager-api/issues) repository.
+
