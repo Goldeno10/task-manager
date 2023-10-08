@@ -74,6 +74,19 @@ Background job processing will automatically send email notifications for approa
 
 ### API Authentication
 The API uses session-based authentication. To access protected endpoints, you must be authenticated. You can log in or register a new user account.
+## Endpoints
+
+- `/users/`: List all users (requires authentication).
+- `/users/me/`: Get the user's own profile (requires authentication).
+- `/users/confirm/`: Confirm a user's email address after registration.
+- `/users/resend_activation/`: Resend the activation email.
+- `/users/set_password/`: Set or change a user's password.
+- `/users/reset_password/`: Request a password reset.
+- `/users/reset_password_confirm/`: Confirm a password reset.
+- `/users/set_username/`: Set or change a user's username.
+- `/jwt/create/`: Create a JWT token by providing valid credentials (username and password).
+- `/jwt/refresh/`: Refresh an existing JWT token to extend its validity.
+- `/jwt/verify/`: Verify the authenticity and validity of a JWT token.
 
 ### Error Handling
 The API handles errors gracefully and returns appropriate status codes and error messages for invalid requests or unauthorized actions.
