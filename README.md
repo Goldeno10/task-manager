@@ -25,7 +25,7 @@ Task Manager API is a Django-based web application that allows users to manage t
 ### 1. Clone the repository to your local machine:
 
    ```
-   git clone https://github.com/your-username/task-manager-api.git
+   git clone https://github.com/goldeno10/task-manager-api.git
    ```
 ### 2 - Navigate to the project directory:
 
